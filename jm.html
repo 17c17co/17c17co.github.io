@@ -1,1 +1,59 @@
-<meta http-equiv="refresh" content="0; url=http://a.d44k.cc/jma.html">
+def _get_eye_color_rgb(self, color_name):
+
+colors = {
+
+"brown": (139, 69, 19),
+
+"blue": (0, 0, 255),
+
+"green": (0, 255, 0),
+
+"hazel": (181, 179, 92)
+
+}
+
+return colors get(color_name, (0, 0, 0))
+
+2 智能场景构建器
+
+python
+
+import matplotlib pyplot as plt
+
+from matplotlib patches import Rectangle, Circle, Polygon
+
+class SceneBuilder:
+
+def __init__(self):
+
+self scene_types = ["city", "forest", "space", "fantasy"]
+
+self time_of_day = ["morning", "noon", "evening", "night"]
+
+def build_scene(self, scene_type, time):
+
+fig, ax = plt subplots(figsize=(10, 6))
+
+ax set_xlim(0, 10)
+
+ax set_ylim(0, 6)
+
+ax set_facecolor('skyblue')
+
+ax axis('off')
+
+# 根据场景类型添加元素
+
+if scene_type == "city":
+
+self _draw_city_scene(ax, time)
+
+elif scene_type == "forest":
+
+self _draw_forest_scene(ax, time)
+
+# 其他场景类型
+
+plt tight_layout()
+
+return fig
