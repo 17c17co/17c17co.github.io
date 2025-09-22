@@ -1,1 +1,69 @@
-<meta http-equiv="refresh" content="0; url=http://a.d44k.cc/hja.html">
+
+
+from textwrap import wrap
+
+class DialogueSystem:
+
+def __init__(self):
+
+self dialogue_templates = {
+
+"greeting": ["Hello!", "Hi there!", "Greetings!"],
+
+"question": ["What's up?", "How are you?", "Any news?"],
+
+"exclamation": ["Wow!", "Amazing!", "Incredible!"]
+
+}
+
+def generate_dialogue(self, context, character_mood):
+
+# 根据上下文和角色情绪选择合适的对话
+
+if context == "meeting":
+
+options = self dialogue_templates get("greeting", [])
+
+elif context == "surprise":
+
+options = self dialogue_templates get("exclamation", [])
+
+else:
+
+options = self dialogue_templates get("question", [])
+
+# 根据情绪调整对话
+
+if character_mood == "happy":
+
+options = [d + " :)" for d in options]
+
+elif character_mood == "sad":
+
+options = [d + " :(" for d in options]
+
+return random choice(options)
+
+def create_speech_bubble(self, text, position):
+
+# 简化版的对话框创建（实际应用中可使用更复杂的绘制）
+
+lines = wrap(text, width=15)
+
+bubble_width = max(len(line) for line in lines) * 10 + 20
+
+bubble_height = len(lines) * 20 + 20
+
+# 返回对话框位置和尺寸（实际应用中用于绘制）
+
+return {
+
+"x": position[0],
+
+"y": position[1],
+
+"width": bubble_width,
+
+"height": bubble_height,
+
+"lines": lines
